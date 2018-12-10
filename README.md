@@ -6,3 +6,23 @@ The prototype of the server can be found at : https://github.com/chukie/firesmar
 The prototype of the microcontroller code can be found at : https://github.com/chukie/firesmartarduinocode
 
 The prototype of the App (android platform ) can be found at : https://github.com/chukie/firesmartandroidapp
+
+
+## Brief architecture explanation :
+Microcontroller (Think speak) runs a loop that senses fire when sensed it triggers the central server and an alarm object is created in a json File storage base (stored on aws buckets) . The android app repeatedly looks for a change in database to see if any alarm object has been created when created , the app notifies user and if after a certain time there is no change in alarm status the microcontroller calls the central server again to call 911 . 
+
+
+## This is an incomplete but functioning prototype of the system 
+ Features implemented
+* call 911
+* Text notification
+* microcontroller sense fire 
+* Interaction between server , app and Microcontroller
+* Alarm status displaying on app
+
+ Features to add
+* Boot android app service when phone is turned on
+* Detect varying level and angles of smoke (might require advanced designed sensors).
+* Use App notification instead of text notification 
+
+
